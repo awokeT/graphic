@@ -5,13 +5,12 @@ const createLineChart = (finalData, chartRef) => {
     const { max } = finalData;
     const ctx = chartRef.current.getContext('2d');
 
-    // Define o fundo do canvas como transparente
     ctx.globalCompositeOperation = 'destination-over';
     ctx.fillStyle = 'transparent';
     ctx.fillRect(0, 0, chartRef.current.width, chartRef.current.height);
     const plugin = {
         id: 'customCanvasBackgroundColor',
-        beforeDraw: (chart, args, options) => {
+        beforeDraw: (chart, options) => {
           const {ctx} = chart;
           ctx.save();
           ctx.globalCompositeOperation = 'destination-over';
@@ -96,7 +95,6 @@ const createLineChart = (finalData, chartRef) => {
         );
     
         return () => {
-            // Limpar o gráfico ao desmontar o componente
             myChart.destroy();
         };
     }, [labels, dataset1, dataset2, dataset3, total, max, chartRef]);

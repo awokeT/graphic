@@ -13,8 +13,17 @@
 .input-text {
   display: flex;
   max-width: 400px;
+  min-width: 80px;
+  height: 20px;
+  font-size: 90%;
+}
+
+.textarea {
+  margin-top: 4px;
+  display: flex;
+  max-width: 400px;
   min-width: 100px;
-  height: 30px;
+  height: 60px;
   font-size: 90%;
 }
 

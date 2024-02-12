@@ -51,7 +51,8 @@ export default function MainPage() {
         }
 
         const total = somarArrays(dataset1,dataset2,dataset3)
-        const max = maxNum(total);
+        const max1 = maxNum(total);
+        const max = max1;
         setFinalData({
             title,
             obs,

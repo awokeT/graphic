@@ -6,6 +6,7 @@ const createLineChart = (finalData, chartRef) => {
     let obsStr = 'OBS: '
     const tensionValue = 0;
     const borderWidthValue = 1.5;
+    const exactLabels = finalData.labels.slice(1);
     const ctx = chartRef.current.getContext('2d');
     if(obs === '') {
         obsStr = ''
@@ -29,7 +30,7 @@ const createLineChart = (finalData, chartRef) => {
     const myChart = new Chart(ctx, {
         type: 'line',
         data: {
-        labels: finalData.labels.slice(1),
+        labels: exactLabels,
         datasets: [
             {
                 label: 'Acertos',
@@ -85,10 +86,27 @@ const createLineChart = (finalData, chartRef) => {
                 }
               },
             scales: {
-                y: {
-                beginAtZero: true,
-                max: max
-                },
+                x: {
+                    grid: {
+                      display: false,
+                    },
+                  },
+                  y: {
+                    grid: {
+                      display: true,
+                    },
+                    ticks: {
+                      autoSkip: false,
+                      maxRotation: 45,
+                      minRotation: 0,
+                      stepSize: 1, // Garante que cada valor é representado apenas uma vez
+                      callback: function (value) {
+                        return value.toFixed(0);
+                      },
+                    },
+                    beginAtZero: true,
+                    max: max,
+                  },
             },
         },
         plugins: [plugin],

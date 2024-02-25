@@ -59,15 +59,15 @@ const createLineChart = (finalData, chartRef) => {
                 tension: tensionValue,
                 borderWidth: borderWidthValue
             },
-            {
-                label: 'Aplicações',
-                data: finalData.total,
-                fill: false,
-                borderColor: 'rgb(0, 0, 0)',
-                backgroundColor: 'rgb(0, 0, 0)',
-                tension: tensionValue,
-                borderWidth: borderWidthValue
-            },
+            // {
+            //     label: 'Aplicações',
+            //     data: finalData.total,
+            //     fill: false,
+            //     borderColor: 'rgb(0, 0, 0)',
+            //     backgroundColor: 'rgb(0, 0, 0)',
+            //     tension: tensionValue,
+            //     borderWidth: borderWidthValue
+            // },
         ],
         },
         options: {

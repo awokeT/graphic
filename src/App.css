@@ -1,46 +1,35 @@
 .main {
   display: flex;
-
+  width: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding-left: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
   width: 50%;
 }
 
-.input-text {
-  display: flex;
-  max-width: 400px;
-  min-width: 80px;
-  height: 20px;
-  font-size: 90%;
+.input-text,
+.textarea,
+.button {
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box; /* Garante que a largura total inclui bordas e preenchimento */
 }
 
 .textarea {
-  margin-top: 4px;
-  display: flex;
-  max-width: 400px;
-  min-width: 100px;
   height: 60px;
-  font-size: 90%;
 }
 
-.div-button{
+.div-button {
   display: flex;
   justify-content: center;
-  padding-top: 2px;
-  max-width: 408px;
-}
-
-.button {
-  max-width: 150px;
 }
 
 .container1 {
-  display: flex;
-  background-color: white;
   width: 50%;
   padding-right: 5%;
+  background-color: #fff;
 }
